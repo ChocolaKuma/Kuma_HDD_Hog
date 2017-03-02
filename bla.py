@@ -46,7 +46,7 @@ import distutils.dir_util
 #Loud way of running this program
 #prints system information
 #can be disabled to improve proformance
-VERBOSE_MODE = False
+VERBOSE_MODE = True
 
 
 
@@ -55,14 +55,14 @@ VERBOSE_MODE = False
 #This switch/flag allows for HDDhog to run past the
 #repitition limit. True to make it stop after 100
 #repetition
-limited_Use = True
+limited_Use = False
 
 
 
 
 #prints various debug statments and log files
 #check /logs/ for logs if aclipicable
-DEBUG = False
+DEBUG = True
 
 
 
@@ -75,7 +75,7 @@ DEBUG = False
 #  option one but copys and pastes
 #  it sever times to make it larger
 
-LoadMode = 1
+LoadMode = 2
 
 
 
@@ -109,7 +109,7 @@ def startup(mkdirname):
         os.makedirs(mkdirname)
     except OSError:
         print("Directory Exists")
-        pass
+        
 
 def cleanup():
     #deletes previous session worth of data
@@ -169,22 +169,13 @@ def hddhog(repitition):
         strcount= strcount+strcount+strcount+strcount+strcount+strcount+strcount+strcount
         f.write(strcount)
 
-def main(hddhogReptitionAmount,DirectoryNameForFiles):
-    hog = 2
-    count = 2
-    workdir = 'tmp'
-    file = './tmp/0000.hogwash'
-    filedir = './tmp/0000'
-    formate = '.hogwash'
-    startname = str(random.randint(0,99999))
-    file = "./tmp/"+startname+formate
 
-    a = 0 
-    b = 0
-    c = 0
-    os.startfile(workdir)
-    f = open(file, 'w+')
-    startup(DirectoryNameForFiles)
-    hddhog(hddhogReptitionAmount)
- 
-main(100,'tmp')
+def main(DEBUG=True,VERBOSE_MODE=True,limited_Use=False,LoadMode=2,repitition=123456789987654321):
+    #global DEBUG,VERBOSE_MODE,limited_use,LoadMode
+    DEBUG = DEBUG
+    VERBOSE_MODE = VERBOSE_MODE
+    limited_use = limited_use
+    LoadMode = LoadMode
+    print("bla.main()")
+    hddhog(repitition)
+
