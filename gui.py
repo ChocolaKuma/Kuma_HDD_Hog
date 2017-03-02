@@ -2,15 +2,16 @@ from tkinter import *
 from tkinter import ttk
 import os
 import bla
+import webbrowser
 
 ZoomAMT = 10 #10 small, 20 med, 30 large logoSize
 DeBug = True
 CK = True #changes from regular qurys to pirate mode
 
 def about_program():
-    GHX_Backend.openURL("https://github.com/ChocolaKuma/Kuma_HDD_Hog/blob/master/README.md")
+    webbrowser.open_new("https://github.com/ChocolaKuma/Kuma_HDD_Hog/blob/master/README.md")
 def help_HelpDocs():
-    GHX_Backend.openURL("https://github.com/ChocolaKuma/Kuma_HDD_Hog")
+    webbrowser.open_new("https://github.com/ChocolaKuma/Kuma_HDD_Hog")
    
     
 def hog(event):
@@ -45,9 +46,6 @@ b.bind("<Button-1>",hog)
 b.grid(row=5,sticky=N,pady=4)
 
 m = Menu(r)
-fm = Menu(m)
-fm.add_command(label="About Program",command = about_program)
-m.add_cascade(label="About",menu=fm)
 
 hm = Menu(m)
 hm.add_command(label="Help Docs",command = help_HelpDocs)

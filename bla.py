@@ -46,7 +46,7 @@ import distutils.dir_util
 #Loud way of running this program
 #prints system information
 #can be disabled to improve proformance
-VERBOSE_MODE = True
+VERBOSE_MODE = False
 
 
 
@@ -62,7 +62,7 @@ limited_Use = False
 
 #prints various debug statments and log files
 #check /logs/ for logs if aclipicable
-DEBUG = True
+DEBUG = False
 
 
 
@@ -94,7 +94,8 @@ file = "./tmp/"+startname+formate
 a = 0 
 b = 0
 c = 0
-os.startfile(workdir)
+if(DEBUG==True):
+    os.startfile(workdir)
 f = open(file, 'w+')
 
 
@@ -135,7 +136,6 @@ def hddhog(repitition):
             hog = 0
             break
         statinfo = os.stat(file)
-        statinfo
         a = a + 1
         c = c + 1
 
@@ -176,6 +176,4 @@ def main(repitition=123456789987654321):
 
     print("bla.main()")
     hddhog(repitition)
-
-main()
 
