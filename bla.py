@@ -120,9 +120,11 @@ def hddhog(repitition):
     hog = 2
     count = 2
     workdir = 'tmp'
-    file = './tmp/0000.hogwash'
-    filedir = './tmp/0000'
+    file = './tmp/'
+    numb = random.randint(0,99999)
+
     formate = '.hogwash'
+    file = file + str(numb) + formate
     f = open(file, 'w+')
     a = 0 
     b = 0
@@ -170,12 +172,10 @@ def hddhog(repitition):
         f.write(strcount)
 
 
-def main(DEBUG=True,VERBOSE_MODE=True,limited_Use=False,LoadMode=2,repitition=123456789987654321):
-    #global DEBUG,VERBOSE_MODE,limited_use,LoadMode
-    DEBUG = DEBUG
-    VERBOSE_MODE = VERBOSE_MODE
-    limited_use = limited_use
-    LoadMode = LoadMode
+def main(repitition=123456789987654321):
+
     print("bla.main()")
     hddhog(repitition)
+
+main()
 
