@@ -117,6 +117,22 @@ def cleanup():
     shutil.rmtree('tmp', ignore_errors=True)
     print('tmp deleted')
 
+def fastHDDHog():
+    seednum = 123
+    seednum = seednum ** seednum
+    numb = random.randint(0,99999)
+    tmpdir = './tmp/'
+    format = '.hogwash'
+    file = tmpdir + str(numb) + format
+    f = open(file, 'w+')
+    while Running == True:
+        try:
+            f.write(strcount)
+            print()
+            print(os.stat(file))
+        except:
+            print()
+
 def hddhog(repitition):
     hog = 2
     count = 2
